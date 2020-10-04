@@ -72,9 +72,9 @@ window.onload = function(){
     });
 
     function frame(){
-        var w = window.innerWidth;
-        var h = window.innerHeight;
-        if((posX >= w) || (posY >= (h - 51))){ 
+        var w = document.querySelector('.main-content').clientWidth;
+        var h = document.querySelector('.main-content').clientHeight;
+        if((posX >= w) || (posY >= h)){ 
             posX = Math.floor(Math.random() * w); 
             posY = 0; //Math.floor(Math.random() * h);
             slope = Math.sin((Math.floor(Math.random() * (75 - 20 + 1)) + 20) * Math.PI / 180);
