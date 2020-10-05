@@ -32,7 +32,7 @@ body{
     font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
 
     .overlay-layer{
         position: fixed;
