@@ -32,6 +32,8 @@ body{
     font-family: 'Open Sans', sans-serif;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+
 
     .overlay-layer{
         position: fixed;
