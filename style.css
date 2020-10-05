@@ -534,6 +534,58 @@ footer .social_icons:hover {
           transform: scale(1.07);
 }
 
+@media (hover: none), (hover: on-demand) {
+  .side-nav .side-nav-contents #menu-close:hover {
+    fill: #D3DCFF;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .side-nav .side-nav-contents .nav-list div:hover {
+    color: #D3DCFF;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .side-nav .side-nav-contents .nav-list div:hover a {
+    color: #D3DCFF;
+  }
+  header .container nav a #mylogo:hover {
+    fill: #D3DCFF;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  header .container nav ul li div:hover {
+    color: #D3DCFF;
+    cursor: pointer;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  header .container nav ul li div:hover a {
+    color: #D3DCFF;
+  }
+  header .container nav #menu-bar:hover {
+    fill: #D3DCFF;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .main-content .content .joy_container .joy a:hover {
+    background-color: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .main-content .content .joy_container .joy a:hover svg {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .main-content .content .joy_container .joy a:hover p {
+    font-size: 12px;
+  }
+  footer .container nav .social-links a .social-icons:hover {
+    fill: #D3DCFF;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 @media screen and (max-width: 840px) {
   .main-content .content #heading {
     font-size: 30px;

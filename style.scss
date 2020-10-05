@@ -467,6 +467,109 @@ footer{
 //############### MEDIA QUERY ######################
 //##################################################
 
+@media (hover: none), (hover: on-demand){
+    .side-nav{
+        .side-nav-contents{
+            #menu-close{
+                &:hover{
+                    fill: $text_secondary_color;
+                    //cursor: pointer;
+                    transform: scale(1);
+                }
+            }
+
+            .nav-list{
+                div{
+                    &:hover{
+                        color: $text_secondary_color;
+                        //cursor: pointer;
+                        transform: scale(1);
+    
+                        a{
+                            color: $text_secondary_color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    header{
+        .container{
+            nav{
+                a{
+                    #mylogo{
+                        &:hover{
+                            fill: $text_secondary_color;
+                            //cursor: pointer;
+                            transform: scale(1);
+                        }
+                    }
+                }
+                ul{
+                    li{
+                        div{
+                            &:hover{
+                                color: $text_secondary_color;
+                                cursor: pointer;
+                                transform: scale(1);
+            
+                                a{
+                                    color: $text_secondary_color;
+                                }
+                            }
+                        }
+                    }
+                }
+                #menu-bar{
+                    &:hover{
+                        fill: $text_secondary_color;
+                        //cursor: pointer;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+    .main-content{
+        .content{
+            .joy_container{
+                .joy{
+                    a{
+                        &:hover{
+                            background-color: none;
+                            box-shadow: none;
+                            svg{
+                                transform: scale(1);
+                            }
+                            p{
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        .container{
+            nav{
+                .social-links{
+                    a{
+                        .social-icons{
+                            &:hover{
+                                fill: $text_secondary_color;
+                                //cursor: pointer;
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 840px){
     .main-content{
         .content{
