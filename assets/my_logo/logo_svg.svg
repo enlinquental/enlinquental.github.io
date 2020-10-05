@@ -4,6 +4,7 @@
 	 viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#323853;}
+	@media (prefers-color-scheme: dark){.st0{fill:#D3DCFF;}}
 </style>
 <path class="st0" d="M122.5,178.6H61.9L84.8,70.1h60.7l-4,18.9h-38l-5,23.8h35.4l-4.1,18.9H94.5l-5.9,28h38L122.5,178.6z
 	 M237.5,150.2c6.1-11.8,9.1-25.6,9.1-41.2c0-12.8-3.5-22.8-10.4-29.9c-6.9-7.1-16.7-10.7-29.3-10.7c-11.3,0-21.2,2.9-29.8,8.8
