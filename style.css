@@ -458,6 +458,8 @@ footer {
   color: #D3DCFF;
   height: 50px;
   margin-top: auto;
+  position: relative;
+  bottom: 0vh;
   z-index: 3;
 }
 

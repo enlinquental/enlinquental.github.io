@@ -404,6 +404,8 @@ footer{
     color: $text_secondary_color;
     height: 50px;
     margin-top: auto;
+    position: relative;
+    bottom: 0vh;
     z-index: 3;
     
     p{
