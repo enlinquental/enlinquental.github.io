@@ -92,8 +92,8 @@ window.onload = function(){
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
             var speed = layer[i].getAttribute('data-speed');
-            var xX = (x * speed)/100;//100;
-            var yY = (y * speed)/70;//70;
+            var xX = (x * speed)/50;//100;
+            var yY = (y * speed)/35;//70;
             layer[i].style.transform = 'translateX(' + xX + 'px) translateY(' + yY + 'px)';
         }
     };
