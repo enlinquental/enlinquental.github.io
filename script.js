@@ -15,7 +15,7 @@ window.onload = function(){
         comet = document.querySelector('.comet'),
         posX = 0, posY = 0, slope = 0.2, comet_hit_offset = 0,
         speed = [18, 8, 20, 22],
-        timer = setInterval( function(){ frame(hit_offset); } , 20);
+        timer = setInterval( frame, 20);
 
 
     function textChange(media){
@@ -118,7 +118,7 @@ window.onload = function(){
             posY = 0; //Math.floor(Math.random() * h);
             slope = Math.sin((Math.floor(Math.random() * (75 - 20 + 1)) + 20) * Math.PI / 180);
             clearInterval(timer);
-            timer = setInterval( function(){ frame(hit_offset); } , speed[Math.floor(Math.random() * speed.length)]);
+            timer = setInterval( frame, speed[Math.floor(Math.random() * speed.length)]);
         }
         else{
             posY = posY + 0.3, posX = posY / slope;
