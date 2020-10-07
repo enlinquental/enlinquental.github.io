@@ -13,7 +13,7 @@ window.onload = function(){
         content =  document.querySelector('.content'),
         about_content = document.querySelector('.about-content'),
         comet = document.querySelector('.comet'),
-        posX = 0, posY = 0, slope = 0.2, hit_offset = 0,
+        posX = 0, posY = 0, slope = 0.2, comet_hit_offset = 0,
         speed = [18, 8, 20, 22],
         timer = setInterval( function(){ frame(hit_offset); } , 20);
 
@@ -31,12 +31,12 @@ window.onload = function(){
 
     function deviceChange(device){
         if(device.matches){ 
-            hit_offset = 0;
+            comet_hit_offset = 1;
             window.addEventListener('deviceorientation', deviceOrientation);
             document.removeEventListener('mousemove', mouseMove);
         } 
         else{
-            hit_offset = 0; 
+            comet_hit_offset = 0; 
             document.addEventListener('mousemove', mouseMove);
             window.removeEventListener('deviceorientation', deviceOrientation);
         }
@@ -94,7 +94,9 @@ window.onload = function(){
             var speed = layer[i].getAttribute('data-speed');
             var xX = (window.innerWidth - (x * speed))/130 + 1;// /200 + 5;
             var yY = (window.innerHeight - (y * speed))/130 - 2;
-            layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
+            if((comet_hit_offset != 1) && (i != 5)){
+                layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
+            }
         }
     };
 
@@ -109,8 +111,8 @@ window.onload = function(){
     };
 
     function frame(){
-        var w = document.querySelector('.main-content').clientWidth + hit_offset;
-        var h = document.querySelector('.main-content').clientHeight + hit_offset;
+        var w = document.querySelector('.main-content').clientWidth;
+        var h = document.querySelector('.main-content').clientHeight;
         if((posX >= w) || (posY >= h)){ 
             posX = Math.floor(Math.random() * w); 
             posY = 0; //Math.floor(Math.random() * h);
