@@ -15,8 +15,8 @@ window.onload = function(){
         comet = document.querySelector('.comet'),
         posX = 0, posY = 0, slope = 0.2, hit_offset = 0,
         speed = [18, 8, 20, 22],
-        timer = setInterval(frame, 20);
-        
+        timer = setInterval( function(){ frame(hit_offset); } , 20);
+
 
     function textChange(media){
         if(media.matches){ 
@@ -31,12 +31,12 @@ window.onload = function(){
 
     function deviceChange(device){
         if(device.matches){ 
-            hit_offset = 700;
+            hit_offset = 100;
             window.addEventListener('deviceorientation', deviceOrientation);
             document.removeEventListener('mousemove', mouseMove);
         } 
         else{
-            hit_offset = 0;
+            hit_offset = 0; 
             document.addEventListener('mousemove', mouseMove);
             window.removeEventListener('deviceorientation', deviceOrientation);
         }
@@ -94,7 +94,7 @@ window.onload = function(){
             var speed = layer[i].getAttribute('data-speed');
             var xX = (x * speed)/100;//100;
             var yY = (y * speed)/70;//70;
-            layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
+            layer[i].style.transform = 'translateX(' + xX + 'px) translateY(' + yY + 'px)';
         }
     };
 
@@ -109,14 +109,14 @@ window.onload = function(){
     };
 
     function frame(){
-        var w = document.querySelector('.main-content').clientWidth;
-        var h = document.querySelector('.main-content').clientHeight;
-        if((posX >= w + hit_offset) || (posY >= h + hit_offset)){ 
+        var w = document.querySelector('.main-content').clientWidth + hit_offset;
+        var h = document.querySelector('.main-content').clientHeight + hit_offset;
+        if((posX >= w) || (posY >= h)){ 
             posX = Math.floor(Math.random() * w); 
             posY = 0; //Math.floor(Math.random() * h);
             slope = Math.sin((Math.floor(Math.random() * (75 - 20 + 1)) + 20) * Math.PI / 180);
             clearInterval(timer);
-            timer = setInterval(frame, speed[Math.floor(Math.random() * speed.length)]);
+            timer = setInterval( function(){ frame(hit_offset); } , speed[Math.floor(Math.random() * speed.length)]);
         }
         else{
             posY = posY + 0.3, posX = posY / slope;
