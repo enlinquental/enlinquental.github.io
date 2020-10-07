@@ -68,8 +68,8 @@ window.onload = function(){
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
             var speed = layer[i].getAttribute('data-speed');
-            var xX = (x * speed)/70;//150;
-            var yY = (y* speed)/70;//150;
+            var xX = (x * speed)/100;//150;
+            var yY = (y * speed)/100;//150;
             layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
         }
     });
