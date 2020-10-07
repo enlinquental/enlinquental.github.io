@@ -96,6 +96,7 @@ window.onload = function(){
             var xX = (window.innerWidth - (x * speed))/130;// /200 + 5;
             var yY = (window.innerHeight - (y * speed))/130;
             if(i != 5){
+                if(i == 0){ yY -= 10; }
                 if(i == 2 || i == 3 || i == 4){ xX -= 30; yY -= 25; }
                 layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
             }
