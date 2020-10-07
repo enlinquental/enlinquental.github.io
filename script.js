@@ -31,7 +31,7 @@ window.onload = function(){
 
     function deviceChange(device){
         if(device.matches){ 
-            hit_offset = 200;
+            hit_offset = 500;
             window.addEventListener('deviceorientation', deviceOrientation);
             document.removeEventListener('mousemove', mouseMove);
         } 
