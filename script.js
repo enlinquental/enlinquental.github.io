@@ -92,9 +92,9 @@ window.onload = function(){
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
             var speed = layer[i].getAttribute('data-speed');
-            var xX = (x * speed)/15;//100;
-            var yY = (y * speed)/13;//70;
-            layer[i].style.transform = 'translateX(' + xX + 'px) translateY(' + yY + 'px)';
+            var xX = (window.innerWidth - (x * speed))/200 + 5;
+            var yY = (window.innerHeight - (y * speed))/200;
+            layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
         }
     };
 
