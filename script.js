@@ -3,6 +3,10 @@ window.onload = function(){
     textChange(media); 
     media.addEventListener('change', textChange);
 
+    var device = window.matchMedia('(max-width: 1024px)');
+    deviceChange(device); 
+    device.addEventListener('change', deviceChange);
+
     var overlay_layer = document.querySelector('.overlay-layer'),
         side_nav = document.querySelector('.side-nav'),
         side_nav_contents = document.querySelector('.side-nav-contents'),
@@ -22,6 +26,17 @@ window.onload = function(){
         else{
             document.getElementById('detail-left').innerHTML = "Enlin Quental";
             document.getElementById('detail-right').innerHTML = "Portfolio";
+        }
+    };
+
+    function deviceChange(device){
+        if(device.matches){ 
+            window.addEventListener('deviceorientation', deviceOrientation);
+            document.removeEventListener('mousemove', mouseMove);
+        } 
+        else{
+            document.addEventListener('mousemove', mouseMove);
+            window.removeEventListener('deviceorientation', deviceOrientation);
         }
     };
     
@@ -61,7 +76,7 @@ window.onload = function(){
         }, 400);
     };
 
-    window.addEventListener('deviceorientation', function(event){
+    function deviceOrientation(event){
         var x = -event.alpha;
         var y = -event.beta;
 
@@ -74,9 +89,9 @@ window.onload = function(){
             var yY = (y * speed)/70;//150;
             layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
         }
-    });
+    };
 
-    document.addEventListener('mousemove', function(e){
+    function mouseMove(e){
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
             var speed = layer[i].getAttribute('data-speed');
@@ -84,7 +99,7 @@ window.onload = function(){
             var y = (window.innerHeight - (e.clientY * speed))/3000;
             layer[i].style.transform = 'translateX(' + x + 'vw) translateY(' + y + 'vh)';
         }
-    });
+    };
 
     function frame(){
         var w = document.querySelector('.main-content').clientWidth;
