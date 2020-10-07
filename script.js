@@ -65,6 +65,8 @@ window.onload = function(){
         var x = -event.alpha;
         var y = -event.beta;
 
+        if(x>0){ x = -(180 - x) - 180; };
+
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
             var speed = layer[i].getAttribute('data-speed');
