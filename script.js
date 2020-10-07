@@ -12,9 +12,9 @@ window.onload = function(){
         side_nav_contents = document.querySelector('.side-nav-contents'),
         content =  document.querySelector('.content'),
         about_content = document.querySelector('.about-content'),
-        comet = document.querySelector('.comet');
-        posX = 0, posY = 0, slope = 0.2,
-        speed = [18, 8, 20, 22];
+        comet = document.querySelector('.comet'),
+        posX = 0, posY = 0, slope = 0.2, hit_offset = 0,
+        speed = [18, 8, 20, 22],
         timer = setInterval(frame, 20);
         
 
@@ -31,10 +31,12 @@ window.onload = function(){
 
     function deviceChange(device){
         if(device.matches){ 
+            hit_offset = 100;
             window.addEventListener('deviceorientation', deviceOrientation);
             document.removeEventListener('mousemove', mouseMove);
         } 
         else{
+            hit_offset = 0;
             document.addEventListener('mousemove', mouseMove);
             window.removeEventListener('deviceorientation', deviceOrientation);
         }
@@ -109,7 +111,7 @@ window.onload = function(){
     function frame(){
         var w = document.querySelector('.main-content').clientWidth;
         var h = document.querySelector('.main-content').clientHeight;
-        if((posX >= w) || (posY >= h)){ 
+        if((posX >= w + hit_offset) || (posY >= h + hit_offset)){ 
             posX = Math.floor(Math.random() * w); 
             posY = 0; //Math.floor(Math.random() * h);
             slope = Math.sin((Math.floor(Math.random() * (75 - 20 + 1)) + 20) * Math.PI / 180);
