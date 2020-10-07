@@ -3,7 +3,7 @@ window.onload = function(){
     textChange(media); 
     media.addEventListener('change', textChange);
 
-    var device = window.matchMedia('(max-width: 1024px)');
+    var device = window.matchMedia('(max-width: 1366px)');
     deviceChange(device); 
     device.addEventListener('change', deviceChange);
 
@@ -31,7 +31,7 @@ window.onload = function(){
 
     function deviceChange(device){
         if(device.matches){ 
-            hit_offset = 500;
+            hit_offset = 700;
             window.addEventListener('deviceorientation', deviceOrientation);
             document.removeEventListener('mousemove', mouseMove);
         } 
