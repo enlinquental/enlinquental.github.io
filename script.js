@@ -13,7 +13,7 @@ window.onload = function(){
         content =  document.querySelector('.content'),
         about_content = document.querySelector('.about-content'),
         comet = document.querySelector('.comet'),
-        posX = 0, posY = 0, slope = 0.2, comet_hit_offset = 0,
+        posX = 0, posY = 0, slope = 0.2,
         speed = [18, 8, 20, 22],
         timer = setInterval( frame, 20);
 
@@ -94,7 +94,8 @@ window.onload = function(){
             var speed = layer[i].getAttribute('data-speed');
             var xX = (window.innerWidth - (x * speed))/130 + 1;// /200 + 5;
             var yY = (window.innerHeight - (y * speed))/130 - 2;
-            if((comet_hit_offset != 1) && (i != 5)){
+            if(i != 5){
+                if(i < 5){ xX -= 10; }
                 layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
             }
         }
