@@ -62,8 +62,8 @@ window.onload = function(){
     };
 
     window.addEventListener('deviceorientation', function(event){
-        var x = event.alpha;
-        var y = event.beta;
+        var x = -event.alpha;
+        var y = -event.beta;
 
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
