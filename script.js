@@ -77,10 +77,15 @@ window.onload = function(){
     };
 
     function deviceOrientation(event){
-        var x = -event.alpha;
+        var x = -event.alpha; //jumps at 180,-180
         var y = -event.beta;
 
-        if(x>0){ x = -(180 - x) - 180; };
+        if( x > 180 ){ x = 180; };
+        if( x < -180 ){ x = -180; };
+        if( y > 180 ){ y = 180; };
+        if( y < -180 ){ y = -180; };
+        x += 180;
+        y += 180;
 
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
