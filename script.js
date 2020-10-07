@@ -31,7 +31,7 @@ window.onload = function(){
 
     function deviceChange(device){
         if(device.matches){ 
-            hit_offset = 100;
+            hit_offset = 40;
             window.addEventListener('deviceorientation', deviceOrientation);
             document.removeEventListener('mousemove', mouseMove);
         } 
@@ -92,8 +92,8 @@ window.onload = function(){
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
             var speed = layer[i].getAttribute('data-speed');
-            var xX = (window.innerWidth - (x * speed))/200 + 5;
-            var yY = (window.innerHeight - (y * speed))/200;
+            var xX = (window.innerWidth - (x * speed))/130 + 1;// /200 + 5;
+            var yY = (window.innerHeight - (y * speed))/130 - 2;
             layer[i].style.transform = 'translateX(' + xX + 'vw) translateY(' + yY + 'vh)';
         }
     };
