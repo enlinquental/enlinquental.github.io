@@ -92,7 +92,7 @@ window.onload = function(){
         var i, layer = document.querySelectorAll('.layer');
         for(i = 0; i < layer.length; i++){
             var speed = layer[i].getAttribute('data-speed');
-            if(1 < i < 5){ speed -= 16;}
+            if(i == 2 || i == 3 || i == 4){ speed -= 16; }
             var xX = (window.innerWidth - (x * speed))/130 + 1;// /200 + 5;
             var yY = (window.innerHeight - (y * speed))/130 - 2;
             if(i != 5){
