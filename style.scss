@@ -26,6 +26,11 @@ a{
     text-decoration: none;
 }
 
+.inactive{
+    opacity: 0.54;
+    pointer-events: none;
+}
+
 body{
     background-color: $background-color;
     color: $text_primary_color;

@@ -20,6 +20,11 @@ a {
   text-decoration: none;
 }
 
+.inactive {
+  opacity: 0.54;
+  pointer-events: none;
+}
+
 body {
   background-color: #323853;
   color: #FFFFFF;
