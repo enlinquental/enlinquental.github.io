@@ -3,6 +3,8 @@ window.onload = function(){
     textChange(media); 
     media.addEventListener('change', textChange);
 
+    var initialOffset_x = null, initialOffset_y = 0;
+
     var device = window.matchMedia('(max-width: 1366px)');
     deviceChange(device); 
     device.addEventListener('change', deviceChange);
@@ -78,14 +80,13 @@ window.onload = function(){
         }, 400);
     };
 
-    function deviceOrientation(event){
-        var x = -event.alpha; //jumps at 180,-180
-        var y = -event.beta;
+    function deviceOrientation(event){ 
+        var x = event.alpha;
+        var y = event.beta;
 
-        if( x > 180 ){ x = 180; };
-        if( x < -180 ){ x = -180; };
-        if( y > 180 ){ y = 180; };
-        if( y < -180 ){ y = -180; };
+        x = -x; //jumps at 180,-180
+        y = -y; 
+
         x += 180;
         y += 180;
 
