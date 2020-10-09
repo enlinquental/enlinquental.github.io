@@ -79,7 +79,7 @@ window.onload = function(){
     };
 
     function deviceOrientation(event){ //jumps at 180,-180
-        var x = event.gamma;
+        var x = event.alpha;
         var y = event.beta;
 
         if(x < 0){ x = -x; }
